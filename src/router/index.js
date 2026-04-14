@@ -6,6 +6,23 @@ const routes = [
     path: '/',
     name: 'UserLogin',
     component: UserLogin
+  },
+  {
+    path: '/layout',
+    name: 'FullLayout',
+    component: () => import('../views/Layout.vue'),
+    children: [
+      {
+        path: 'user',
+        name: 'UserManager',
+        component: () => import('../views/User.vue')
+      },
+      {
+        path: 'bed',
+        name: 'BedManager',
+        component: () => import('../views/Bed.vue')
+      }
+    ]
   }
 
 ]
