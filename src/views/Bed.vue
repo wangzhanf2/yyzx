@@ -180,19 +180,20 @@ export default {
     methods: {
         // 这里可以定义一些用户相关的方法  
         handlerChange(value) {
-            console.log('选择的楼层:', value);
+            console.log('选择的楼层:', value,typeof value);
             // 根据选择的楼层进行相应的处理，例如过滤数据等
-            if (value === 0) {
+            if (value == 0) {
                 this.resultList = this.summaryList; // 显示所有楼层的数据
             } else {
-                this.resultList = this.summaryList.filter(item => item.floorNo === value);
+                this.resultList = this.summaryList.filter(item => item.floorNo == value); // 显示选定楼层的数据
+                //this.resultList = this.summaryList.filter(item => item.floorNo == value);
             }
         }
 
     },
     mounted() {
         // 这里可以执行一些初始化操作，例如获取用户信息等
-        this.resultList = this.summaryList.filter(item => item.floorNo === this.value);   
+        this.resultList = this.summaryList.filter(item => item.floorNo == this.floorNum);  
     },
     computed: {
         totalBeds() {
