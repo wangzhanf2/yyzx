@@ -87,6 +87,8 @@ export default {
                     message: '恭喜你，登录成功',
                     type: 'success',
                 })
+                //将用户登录信息记录到  localStorge
+                localStorage.setItem('userInfo', JSON.stringify(this.formData))   
                 this.$router.push('/layout') // 编程式路由跳转  登录成功后跳转到布局页面
             } else {
                 ElMessage.error({

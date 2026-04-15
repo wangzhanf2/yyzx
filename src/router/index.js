@@ -32,4 +32,25 @@ const router = createRouter({
   routes
 })
 
+router.beforeEach((to, from, next) => {
+  // to：要去的路由
+  // from：从哪来
+  // next：放行/跳转
+
+  const token = localStorage.getItem('userInfo')
+
+  // 去登录页直接放行
+  if (to.path === '/login' || to.path === '/') {
+    return next()
+  }
+
+  // 没有 token 跳去登录
+  if (!token) {
+    return next('/')
+  }
+
+  // 正常放行
+  next()
+})
+
 export default router

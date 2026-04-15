@@ -1,6 +1,6 @@
 <template>
     <h1>东软颐养中心</h1>
-    <el-image style="width: 150px; height: 150px" :src="require('@/assets/image/logo.png')"></el-image>
+    <el-image style="width: 150px; height: 150px" src="/image/logo.png"></el-image>
 
     <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
         <el-radio-button :label="false">展开</el-radio-button>
@@ -14,9 +14,8 @@
                 <span>床位管理</span>
             </template>
             <el-menu-item-group>
-
-                <el-menu-item index="1-1">床位示意图</el-menu-item>
-                <router-link to="/layout/bed"><el-menu-item index="1-2">床位管理</el-menu-item></router-link>
+                <el-menu-item index="1-1"><router-link to="/layout/bed">床位示意图</router-link></el-menu-item>
+                <el-menu-item index="1-2">床位管理</el-menu-item>
             </el-menu-item-group>
 
 
