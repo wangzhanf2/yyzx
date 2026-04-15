@@ -14,7 +14,7 @@
                 <span>床位管理</span>
             </template>
             <el-menu-item-group>
-                <el-menu-item index="1-1"><router-link to="/layout/bed">床位示意图</router-link></el-menu-item>
+                <el-menu-item index="1-1"><router-link to="/layout/bedList">床位示意图</router-link></el-menu-item>
                 <el-menu-item index="1-2">床位管理</el-menu-item>
             </el-menu-item-group>
 

@@ -18,9 +18,9 @@ const routes = [
         component: () => import('../views/User.vue')
       },
       {
-        path: 'bed',
-        name: 'BedManager',
-        component: () => import('../views/Bed.vue')
+        path: 'bedList',
+        name: 'BedList',
+        component: () => import('../views/BedList.vue')
       }
     ]
   }

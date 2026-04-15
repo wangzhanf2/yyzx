@@ -3,7 +3,7 @@
         <el-col :span="24">
             <h2>床位示意图</h2>
         </el-col>
-        <el-col :span="8"  :xs="24">
+        <el-col :span="8" :xs="24">
             楼层：<el-select v-model="floorNum" placeholder="请选择楼层" @change="handlerChange">
                 <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
                 </el-option>
@@ -66,7 +66,7 @@
 </template>
 <script>
 export default {
-    name: 'BedManager',
+    name: 'BedList',
     data() {
         return {
             // 这里可以定义一些用户相关的数据
@@ -112,7 +112,7 @@ export default {
                                 },
                                 {
                                     bedNo: 2,
-                                    bedStatus: 1
+                                    bedStatus: 2
                                 }
                             ]
                         },
@@ -121,7 +121,7 @@ export default {
                             bedList: [
                                 {
                                     bedNo: 1,
-                                    bedStatus: 1
+                                    bedStatus: 0
                                 },
                                 {
                                     bedNo: 2,
@@ -138,7 +138,7 @@ export default {
                             bedList: [
                                 {
                                     bedNo: 1,
-                                    bedStatus: 0    //0表示空闲，1表示有人，2表示外出
+                                    bedStatus: 1    //0表示空闲，1表示有人，2表示外出
                                 },
                                 {
                                     bedNo: 2,
@@ -151,7 +151,7 @@ export default {
                             bedList: [
                                 {
                                     bedNo: 1,
-                                    bedStatus: 1
+                                    bedStatus: 0
                                 },
                                 {
                                     bedNo: 2,
@@ -180,7 +180,7 @@ export default {
     methods: {
         // 这里可以定义一些用户相关的方法  
         handlerChange(value) {
-            console.log('选择的楼层:', value,typeof value);
+            console.log('选择的楼层:', value, typeof value);
             // 根据选择的楼层进行相应的处理，例如过滤数据等
             if (value == 0) {
                 this.resultList = this.summaryList; // 显示所有楼层的数据
@@ -193,7 +193,7 @@ export default {
     },
     mounted() {
         // 这里可以执行一些初始化操作，例如获取用户信息等
-        this.resultList = this.summaryList.filter(item => item.floorNo == this.floorNum);  
+        this.resultList = this.summaryList.filter(item => item.floorNo == this.floorNum);
     },
     computed: {
         totalBeds() {
@@ -227,6 +227,4 @@ export default {
     }
 }
 </script>
-<style>
-
-</style>
+<style></style>
